@@ -1,0 +1,39 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // User profile photos
+    match /users/{userId}/profile/{fileName} {
+      // Users can only upload their own profile photos
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == userId &&
+        request.resource.size < 5 * 1024 * 1024 && // Max 5MB
+        request.resource.contentType.matches('image/.*');
+    }
+    
+    // Skill images
+    match /skills/{skillId}/{fileName} {
+      // Anyone can read skill images
+      allow read: if true;
+      // Only skill owner can upload
+      allow write: if request.auth != null &&
+        request.resource.size < 10 * 1024 * 1024 && // Max 10MB
+        request.resource.contentType.matches('image/.*');
+    }
+    
+    // Chat attachments
+    match /chats/{chatId}/{fileName} {
+      // Only chat participants can upload
+      allow read, write: if request.auth != null &&
+        request.resource.size < 25 * 1024 * 1024; // Max 25MB
+    }
+    
+    // Session materials
+    match /sessions/{sessionId}/{fileName} {
+      // Only session participants
+      allow read, write: if request.auth != null &&
+        request.resource.size < 50 * 1024 * 1024; // Max 50MB
+    }
+  }
+}

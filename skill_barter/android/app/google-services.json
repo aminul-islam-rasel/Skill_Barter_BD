@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1011049704387",
+    "project_id": "skill-barter-bd",
+    "storage_bucket": "skill-barter-bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011049704387:android:889b151e8b8beda63e2b76",
+        "android_client_info": {
+          "package_name": "com.example.skill_barter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011049704387-1kur9o8f7gqdm1p6o7ivo17tvpjqnifa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWWdfqtV7yIb3giqW-z5GoLrrhtCNIz-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011049704387-1kur9o8f7gqdm1p6o7ivo17tvpjqnifa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1011049704387-2nffnv2fpsnu5dqjq6d296fbg66rqsvl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.skillBarter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
